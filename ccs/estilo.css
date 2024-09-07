@@ -1,0 +1,70 @@
+.error {
+  color: red;
+}
+
+.tam{
+	font-size=60px;
+}
+
+
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{font-family:Arial, sans-serif;font-size:14px;padding:14px 17px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:14px 17px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+.tg .tg-amwm{font-weight:bold;text-align:center;vertical-align:top}
+.tg .tg-0lax{text-align:left;vertical-align:top}
+
+
+.billete {
+height:85px;
+width: 190px;
+
+}
+
+.inputs{
+
+  border-radius: 15px;
+  padding: 5px 15px;
+  font-family: 'Acme', sans-serif;
+  text-align: center;
+}
+.tables{
+
+  text-align: center;
+
+}
+
+.oriented{
+
+  border: 1px none black;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  text-align: center;
+}
+
+.title{
+
+  border: 1PX dashed black;
+  font-size: 22px;
+  text-align: center;
+
+}
+
+.themed-container {
+  padding: 15px;
+  margin-bottom: 30px;
+  background-color: rgba(0, 123, 255, .15);
+  border: 1px solid rgba(0, 123, 255, .2);
+}
+
+.title2{
+
+  font-size: 18px;
+}
+
+.themed-grid-col {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background-color: rgba(86, 61, 124, .15);
+  border: 1px solid rgba(86, 61, 124, .2);
+}
