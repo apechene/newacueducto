@@ -194,6 +194,5 @@ FINANCIERA DE COLOMBIA
 <script>
 window.print();
 
-window.close();
 
 </script> 
