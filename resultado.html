@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados de Loterías - Slider</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+           
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        /* Contenedor del slider */
+        .slider-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+        /* Contenedor para las tarjetas */
+        .slider {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        /* Tarjetas de lotería */
+        .lottery-card {
+            min-width: 100%;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            
+            text-align: center;
+            height: 250px;
+        }
+        .lottery-card h2 {
+            color: #4CAF50;
+        }
+        .lottery-card p {
+            color: #777;
+        }
+        .lottery-card .result {
+            font-size: 2.5em;
+            margin: 10px 0;
+        }
+
+        /* Controles del slider */
+        .slider-controls {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+        .slider-controls button {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 50%;
+        }
+        .slider-controls button:hover {
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+
+        /* Botón de pausa */
+        #pause-btn {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #f44336;
+        }
+
+        .img-baloto{
+
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Resultados de Loterías</h1>
+
+<!-- Contenedor del slider -->
+<div class="slider-container">
+    <div id="lottery-slider" class="slider">
+        <!-- Aquí se insertarán las tarjetas dinámicamente -->
+    </div>
+    <!-- Controles para avanzar y retroceder -->
+    <div class="slider-controls">
+        <button id="prev-btn">❮</button>
+        <button id="next-btn">❯</button>
+    </div>
+    <!-- Botón para pausar el slider -->
+    <button id="pause-btn">Pausar</button>
+
+</div>
+<div class="img-baloto">
+    <img src="https://ganeyumbo.com/wp-content/uploads/2022/05/Gane-30.png"  width="50%" alt="Baloto">
+
+</div>
+
+<script>
+    let currentSlide = 0;
+    let isPlaying = true;
+    let autoSlideInterval;
+
+    async function fetchLoteriaResults() {
+        try {
+            const response = await fetch('https://api-resultadosloterias.com/api/results');
+            const data = await response.json();
+            const results = data.data;
+
+            const slider = document.getElementById('lottery-slider');
+
+            results.forEach(loteria => {
+                const card = document.createElement('div');
+                card.className = 'lottery-card';
+
+                card.innerHTML = `
+                    <h2>${loteria.lottery}</h2>
+                    <p>Fecha: ${loteria.date}</p>
+                    <div class="result">Resultado: ${loteria.result}</div>
+                    <div class="series">Serie: ${loteria.series}</div>
+                `;
+
+                slider.appendChild(card);
+            });
+
+            startSlider(); // Iniciar el slider automáticamente
+        } catch (error) {
+            console.error('Error al obtener los resultados:', error);
+        }
+    }
+
+    function startSlider() {
+        const slides = document.querySelectorAll('.lottery-card');
+        const totalSlides = slides.length;
+
+        function showSlide(index) {
+            // Ajusta el índice para crear un bucle infinito
+            if (index >= totalSlides) currentSlide = 0;
+            if (index < 0) currentSlide = totalSlides - 1;
+
+            const slider = document.getElementById('lottery-slider');
+            slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+        }
+
+        function nextSlide() {
+            currentSlide++;
+            showSlide(currentSlide);
+        }
+
+        function prevSlide() {
+            currentSlide--;
+            showSlide(currentSlide);
+        }
+
+        // Controles de avanzar y retroceder
+        document.getElementById('next-btn').addEventListener('click', () => {
+            clearInterval(autoSlideInterval); // Reiniciar el intervalo automático al hacer clic
+            nextSlide();
+        });
+
+        document.getElementById('prev-btn').addEventListener('click', () => {
+            clearInterval(autoSlideInterval); // Reiniciar el intervalo automático al hacer clic
+            prevSlide();
+        });
+
+        // Control de pausa
+        document.getElementById('pause-btn').addEventListener('click', () => {
+            if (isPlaying) {
+                clearInterval(autoSlideInterval);
+                document.getElementById('pause-btn').innerText = 'Reanudar';
+            } else {
+                autoSlideInterval = setInterval(nextSlide, 3000);
+                document.getElementById('pause-btn').innerText = 'Pausar';
+            }
+            isPlaying = !isPlaying;
+        });
+
+        // Iniciar el slider automáticamente
+        autoSlideInterval = setInterval(nextSlide, 3000); // Cambia de slide cada 3 segundos
+    }
+
+    // Llamar a la función para obtener los resultados y comenzar el slider
+    fetchLoteriaResults();
+
+    // Recargar la página automáticamente cada 10 minutos (600000 ms)
+    setTimeout(function() {
+        location.reload();
+    }, 600000); // 10 minutos en milisegundos
+</script>
+
+</body>
+</html>
