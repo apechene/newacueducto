@@ -237,7 +237,7 @@ function buscar() {
 		<?php
 	$hoy=date("Y-m-28");?>
 	<label for="Fecha_Pago">Fecha del Pago</label>
-	<input type="text" class="form-control" name="Fecha_Pago" value="<?php echo $hoy?>" id="Fecha_Pago" class="form-control" rel="3" readonly>
+	<input type="text" class="form-control" name="Fecha_Pago" value="<?php echo $hoy?>" id="Fecha_Pago" rel="3">
    </div>
    <div class="col-md-3 mb-4">
 	<label for="Multa">Entidad a que se le pago</label>
@@ -245,12 +245,12 @@ function buscar() {
 	</div>
 	<div class="col-md-3 mb-4">		
 	<label for="saldo_Anterior">Número de Comporbante (N. Factura)</label>
-	<input type="text" name="comprobante" id="comprobante" class="form-control"  class="number required" rel="5" >
+	<input type="text" name="comprobante" id="comprobante" class="form-control" required="true" class="number required" rel="5" >
 	</div>
   <div class="col-md-5 mb-5">
   <label for="Estado">Adjuntar Soporte</label>
   <br>
-    <input type="file" class="custom-file-input" id="uploadedFile" required="true" name="uploadedFile">
+    <input type="file" class="custom-file-input" id="uploadedFile"  name="uploadedFile">
     <label class="custom-file-label" for="uploadedFile">Escoja un Archivo</label>
   </div>
   <br>
