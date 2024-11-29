@@ -237,7 +237,7 @@ function buscar() {
 		<?php
 	$hoy=date("Y-m-28");?>
 	<label for="Fecha_Pago">Fecha del Pago</label>
-	<input type="text" class="form-control" name="Fecha_Pago" value="<?php echo $hoy?>" id="Fecha_Pago" rel="3">
+	<input type="date" class="form-control" name="Fecha_Pago"  id="Fecha_Pago" rel="3">
    </div>
    <div class="col-md-3 mb-4">
 	<label for="Multa">Entidad a que se le pago</label>
