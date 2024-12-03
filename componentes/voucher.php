@@ -130,7 +130,11 @@ echo "<h4>".$row['Fecha']."</h4>"; }
                 </tr>
 				</table>
 
+   <div>
+	   <h3> Consulta Datos financieros del Acueducto 
+		   y une a nuestro Canal en WhatsApp usando el enlace bit.ly/m/sanroque </h3>
 
+   </div>
 
 		<div align="center" class="pago2">
 		  <h2>
