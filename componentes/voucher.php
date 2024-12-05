@@ -135,13 +135,13 @@ echo "<h4>".$row['Fecha']."</h4>"; }
 		   y une a nuestro Canal en WhatsApp usando el enlace bit.ly/m/sanroque </h3>
 	   Escanea el QR: 
 
-	   <?xml version='1.0'?>
+	
 <!--
 Bitly Generated QR Code
 v4
 33x33
 -->
-<svg width='656' height='656'
+<svg width='300' height='300'
 xmlns='http://www.w3.org/2000/svg'
 xmlns:xlink='http://www.w3.org/1999/xlink'>
 	<g id='background' style='fill:#ffffff' >
