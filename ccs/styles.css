@@ -10,6 +10,13 @@ table {
 
   border-collapse: collapse;
 }
+
+.alinear-img{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+}
  
 td.producto,
 th.producto {
