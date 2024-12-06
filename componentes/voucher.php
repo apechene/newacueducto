@@ -134,14 +134,9 @@ echo "<h4>".$row['Fecha']."</h4>"; }
 	   <h3> Consulta Datos financieros del Acueducto 
 		   y une a nuestro Canal en WhatsApp usando el enlace bit.ly/m/sanroque </h3>
 	   Escanea el QR: 
+<div class="alinear-img">
 
-	
-<!--
-Bitly Generated QR Code
-v4
-33x33
--->
-<svg width='300' height='300'
+<svg width='200' height='200'
 xmlns='http://www.w3.org/2000/svg'
 xmlns:xlink='http://www.w3.org/1999/xlink'>
 	<g id='background' style='fill:#ffffff' >
@@ -170,7 +165,7 @@ xmlns:xlink='http://www.w3.org/1999/xlink'>
 <path d="M96,512L112,512L128,512L144,512L144,528L144,544L144,560L128,560L112,560L96,560L96,544L96,528L96,512Z" />
 </g>
 </svg>
-
+</div>
    </div>
 
 		<div align="center" class="pago2">
