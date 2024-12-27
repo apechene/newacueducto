@@ -60,7 +60,7 @@ while($row=mysqli_fetch_array($sql)){
     $Valor= $row['Valor Recaudado'];
     $factura=$row['idconsumo_factura'];
 
-echo "<h4>".$row['Fecha']."</h4>"; }
+echo $row['Fecha']; }
 
 
 
