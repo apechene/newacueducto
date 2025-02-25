@@ -86,7 +86,7 @@ echo $row['Fecha']; }
 
 </body>
 </html>
-
+}
 <script>
     window.print();
 </script>
