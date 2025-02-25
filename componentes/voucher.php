@@ -89,12 +89,4 @@ echo $row['Fecha']; }
 
 <script>
     window.print();
-
-    // Espera 5 segundos (5000 milisegundos) antes de cerrar la ventana
-    setTimeout(function() {
-        // Verifica si la ventana fue abierta por un script
-        if (window.history.length === 1) {
-            window.close();
-        }
-    }, 5000);  // 5000 milisegundos = 5 segundos
 </script>
