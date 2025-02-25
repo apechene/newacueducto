@@ -12,6 +12,7 @@
     	    font-size: 14px; /* Ajusta el tamaño según sea necesario */
             line-height: 1.2; /* Ajusta el espaciado entre líneas */
             background-color: #f8f8f8;
+	    text-align: center;
         }
         .ticket {
             width: 250px;
@@ -62,7 +63,7 @@ if (isset($_POST["id15"])) {
     ?>
 
 <div class="ticket">
-    <h3>Acueducto San Roque</h3>
+    <h2>Acueducto San Roque</h2>
     <p class="bold">Comprobante de Recaudo</p>
     <p>Fecha: <?php echo date('j-m-y'); ?></p>
     <p>Hora: <?php echo date("H:i:s"); ?></p>
