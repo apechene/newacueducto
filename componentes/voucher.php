@@ -8,7 +8,7 @@
 
 	    
         body {
-            font-family: 'Courier New', monospace;
+            font-family: Arial, sans-serif;
     	    font-size: 14px; /* Ajusta el tamaño según sea necesario */
             line-height: 1.2; /* Ajusta el espaciado entre líneas */
             background-color: #f8f8f8;
