@@ -8,9 +8,9 @@
 
 	    
         body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            padding: 20px;
+            font-family: 'Courier New', monospace;
+    	    font-size: 14px; /* Ajusta el tamaño según sea necesario */
+            line-height: 1.2; /* Ajusta el espaciado entre líneas */
             background-color: #f8f8f8;
         }
         .ticket {
@@ -64,11 +64,11 @@ if (isset($_POST["id15"])) {
 <div class="ticket">
     <h3>Acueducto San Roque</h3>
     <p class="bold">Comprobante de Recaudo</p>
-    <p><span class="bold">Fecha:</span> <?php echo date('j-m-y'); ?></p>
-    <p><span class="bold">Hora:</span> <?php echo date("H:i:s"); ?></p>
-    <p><span class="bold">Factura:</span> <?php echo $factura; ?> </p>
-    <p><span class="bold">Cod. exito.:</span> <?php echo $id; ?> </p>
-    <p><span class="bold">Valor:</span> $<?php echo $Valor; ?> </p>
+    <p>Fecha: <?php echo date('j-m-y'); ?></p>
+    <p>Hora: <?php echo date("H:i:s"); ?></p>
+    <p>Factura: <?php echo $factura; ?> </p>
+    <p>Cod. exito.: <?php echo $id; ?> </p>
+    <p>Valor: $<?php echo $Valor; ?> </p>
     <div class="separator"></div>
     <p>Gracias por tu Pago!</p>
     <p></p>
