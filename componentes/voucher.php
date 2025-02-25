@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -38,55 +38,48 @@
         }
     </style>
 
-	<?php
+    <?php
 require_once "../php/conexion.php";
-$connect=conexion(); 
-if(isset($_POST["id15"]))  
-{  
-	 $output = '';  
-	
+$connect = conexion(); 
+if (isset($_POST["id15"])) {  
+    $output = '';  
 ?>
 
 <?php
-		
-$id=$_POST['id15'];
-
+    $id = $_POST['id15'];
 ?>
-	
+    
 </head>
 <body>
-	<?php
-	$consulta=("SELECT `idconsumo_factura`,`Valor Recaudado`,`Fecha` FROM `recaudo` WHERE `idRecaudo` ='".$id."'");
-	$sql=mysqli_query($connect,$consulta);
-while($row=mysqli_fetch_array($sql)){
-
-    $fecha= $row['Fecha'];
-    $Valor= $row['Valor Recaudado'];
-    $factura=$row['idconsumo_factura'];
-
-echo $row['Fecha']; }
-
-
-
-					  ?>
+    <?php
+    $consulta = "SELECT `idconsumo_factura`, `Valor Recaudado`, `Fecha` FROM `recaudo` WHERE `idRecaudo` = '".$id."'";
+    $sql = mysqli_query($connect, $consulta);
+    while ($row = mysqli_fetch_array($sql)) {
+        $fecha = $row['Fecha'];
+        $Valor = $row['Valor Recaudado'];
+        $factura = $row['idconsumo_factura'];
+    }
+    ?>
 
 <div class="ticket">
     <h3>Acueducto San Roque</h3>
     <p class="bold">Comprobante de Recaudo</p>
-    <p><span class="bold">Fecha:</span><?php echo date('j-m-y');?></p>
-    <p><span class="bold">Hora:</span><?php echo date("H:i:s"); ?></p>
-    <p><span class="bold">Factura:</span> <?php echo $factura ?> </p>
-    <p><span class="bold">Cod. exito.:</span> <?php echo $id?> </p>
-    <p><span class="bold">Valor:</span> $<?php echo $Valor?> </p>
+    <p><span class="bold">Fecha:</span> <?php echo date('j-m-y'); ?></p>
+    <p><span class="bold">Hora:</span> <?php echo date("H:i:s"); ?></p>
+    <p><span class="bold">Factura:</span> <?php echo $factura; ?> </p>
+    <p><span class="bold">Cod. exito.:</span> <?php echo $id; ?> </p>
+    <p><span class="bold">Valor:</span> $<?php echo $Valor; ?> </p>
     <div class="separator"></div>
     <p>Gracias por tu Pago!</p>
     <p></p>
 </div>
-	
+    
 
 </body>
 </html>
+<?php
 }
+?>
 <script>
     window.print();
 </script>
